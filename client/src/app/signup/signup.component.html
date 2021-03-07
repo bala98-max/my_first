@@ -1,0 +1,27 @@
+ <div class="bg-container">
+        <div class= "signup-container">
+          <form class= "signup-form" #signupForm = 'ngForm' (ngSubmit)= "Onsubmit()">
+                <h1 class= "mb-5 font-weight-light text-uppercasecenter">Signup</h1>
+              <div class= "form-group">
+                <input type= "text" class= "form-control" placeholder= "UserName" name= "username" #username= "ngModel" ngModel [pattern]= 'name_pattern' required>
+                <span class= "help-block" *ngIf= "username.touched && username.invalid">please Enter the valid username </span>
+                <span class= "help-block" *ngIf= "show">Username not available</span>
+              </div>
+              <div class= "form-group">
+                <input type= "email" class= "form-control" placeholder= "Email" name= "email" #email= "ngModel" ngModel [pattern]= "email_pattern" required>
+                <span class= "help-block" *ngIf= "email.touched && email.invalid">please enter the valid email</span>
+              </div>
+              <div class= "form-group">
+                <input type= "number" class= "form-control" placeholder= "Mobile" name= "mobile" #mobile= "ngModel" ngModel [pattern]= "mobile_p" required>
+                <span class= "help-block" *ngIf= "mobile.touched && mobile.invalid">please enter the valid mobilenumber</span>
+              </div>
+
+              <div class= "form-group">
+                <input type= "password" class= "form-control" placeholder= "Password" #password= "ngModel" ngModel name= "password" [pattern]= 'password_pattern'required>
+                <span class= "help-block" *ngIf="password.touched && password.invalid">Password must contain 6 charactors</span>
+              </div>
+              <button type="submit" class="btn btn-success btn-block" [disabled] ='!signupForm.valid'>Signup</button>
+          </form>
+      </div>
+ </div>
+

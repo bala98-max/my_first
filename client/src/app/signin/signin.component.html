@@ -1,0 +1,22 @@
+
+ <div class="bg-container">
+  <div class= "signin-container">
+    <form class= "signin-form"  #signinForm = 'ngForm' (ngSubmit)="Onsubmit()">
+          <h1 class="mb-5 font-weight-light text-uppercasecenter">Signin</h1>
+        <div class="form-group">
+          <input type= "text" class= "form-control" placeholder= "UserName" name="username" #username= "ngModel" ngModel required [pattern]= "username_pattern">
+          <span class="help-block hp" *ngIf= "username.touched && username.invalid">please enter the valid username</span>
+          <span class="help-block hp" *ngIf= "usnameError">invalid username</span>
+        </div>
+
+        <div class="form-group">
+        <input type="password" class="form-control" placeholder="Password" name= "password" #password= "ngModel" ngModel required [pattern]= "password_pattern">
+        <span class="help-block hp" *ngIf= "password.touched && password.invalid">please enter the valid password</span>
+        <span class="help-block hp" *ngIf= "passError">Password incorrect</span>
+        </div>
+        <button class="btn btn-success btn-block" type="submit"> Signin </button>
+        <span>OR</span>
+        <a class="createacc" routerLink="/signup">Create Account</a>
+    </form>
+</div>
+</div>
